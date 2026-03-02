@@ -1,6 +1,24 @@
-doctype html
-html   
-    head 
-        title Trang chủ đề bài hát 
-    body
-        h1 Trang chủ đề bài hát
+extends ../../../client/layout/default
+
+block main
+  .container.my-3
+    .row
+      .col-12
+        .box-head
+          h2.inner-title Chủ đề bài hát
+
+    .row
+      if topics.length > 0
+        each item in topics
+          .col-xl-3.col-lg-4.col-md-6.col-sm-6.mb-3
+            .topic-item
+              .inner-image
+                a(href=`/topics/${item.slug}`)
+                  img(src=item.avatar, alt=item.title)
+              .inner-content
+                h3.inner-title
+                  a(href=`/topics/${item.slug}`) #{item.title}
+                p.inner-description #{item.description}
+      else
+        .col-12
+          p Chưa có chủ đề nào.
