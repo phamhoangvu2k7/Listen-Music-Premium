@@ -2,7 +2,7 @@ import express, { Express } from "express";
 import * as database from "./config/database";
 import dotenv from "dotenv";
 import path from "path";
-import routeClient from "./routes/index.route";
+import routeClient from "./routes/client/index.route";
 
 dotenv.config();
 
